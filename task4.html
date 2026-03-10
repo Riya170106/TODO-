@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Form Example</h2>
+
+    <form id="form">
+
+        <input type="text" id="name" placeholder="Enter name">
+
+        <input type="email" id="email" placeholder="Enter email">
+        <input type="password" id="password" placeholder="Enter password">
+
+        <button type="submit">Submit</button>
+
+    </form>
+</body>
+
+<script>
+    const form = document.querySelector("#form")
+    const nameInput = document.querySelector("#name")
+    const emailInput = document.querySelector("#email")
+    const password = document.querySelector("#password")
+
+    form.addEventListener("submit", function (event) {
+
+        event.preventDefault()
+
+        const name = nameInput.value
+        const email = emailInput.value
+        const password = password.value
+        if(password.length < 8 || password.length > 10){
+          console.log("Password length should be between 8 to 10")
+          }
+
+        else if(!/[A-Z]/.test(password)){
+            //regex
+         console.log("Password must contain at least one capital letter")
+        }
+
+        else{
+         console.log("Password is valid")
+         }
+
+        console.log("Name:", name)
+        console.log("Email:", email)
+
+    })
+</script>
+
+</html>
